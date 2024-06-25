@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../images/logo/logo.png";
 import { useState } from "react";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
+  const location = useLocation();
 
   const openNav = () => {
     setNav(!nav);
   };
+
+  const isRegisterPage = location.pathname === "/register";
 
   return (
     <>
@@ -39,8 +42,8 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/team">
-                Our Team
+              <Link onClick={openNav} to="/profile">
+                Profile
               </Link>
             </li>
             <li>
@@ -48,11 +51,18 @@ function Navbar() {
                 Contact
               </Link>
             </li>
+            {!isRegisterPage && (
+              <li>
+                <Link onClick={openNav} to="/register">
+                  Register
+                </Link>
+              </li>
+            )}
+            
           </ul>
         </div>
 
         {/* desktop */}
-
         <div className="navbar">
           <div className="navbar__img">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
@@ -66,43 +76,43 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              {" "}
               <Link className="about-link" to="/about">
                 About
               </Link>
             </li>
             <li>
-              {" "}
               <Link className="models-link" to="/models">
                 Vehicle Models
               </Link>
             </li>
             <li>
-              {" "}
               <Link className="testi-link" to="/testimonials">
                 Testimonials
               </Link>
             </li>
             <li>
-              {" "}
-              <Link className="team-link" to="/team">
-                Our Team
+              <Link className="profile-link" to="/profile">
+                Profile
               </Link>
             </li>
             <li>
-              {" "}
               <Link className="contact-link" to="/contact">
                 Contact
               </Link>
             </li>
+            
+          
+           
           </ul>
           <div className="navbar__buttons">
-            <Link className="navbar__buttons__sign-in" to="/">
+            <Link className="navbar__buttons__sign-in" to="/login">
               Sign In
             </Link>
-            <Link className="navbar__buttons__register" to="/">
-              Register
-            </Link>
+            {!isRegisterPage && (
+              <Link className="navbar__buttons__register" to="/register">
+                Register
+              </Link>
+            )}
           </div>
 
           {/* mobile */}

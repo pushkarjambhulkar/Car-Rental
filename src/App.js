@@ -1,25 +1,36 @@
-import "../src/dist/styles.css";
-import About from "./Pages/About";
-import Home from "./Pages/Home";
-import Navbar from "../src/components/Navbar";
-import { Route, Routes } from "react-router-dom";
-import Models from "./Pages/Models";
-import TestimonialsPage from "./Pages/TestimonialsPage";
-import Team from "./Pages/Team";
-import Contact from "./Pages/Contact";
-
+import React from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Navbar from '../src/components/Navbar';
+import About from './Pages/About';
+import Home from './Pages/Home';
+import Models from './Pages/Models';
+import TestimonialsPage from './Pages/TestimonialsPage';
+import Contact from './Pages/Contact';
+import Register from './Pages/Register';
+import Login from './Pages/Login'; // Corrected import statement
+import '../src/dist/styles.css';
+import LearnMore from './Pages/LearnMore';
+import Profile from './Pages/Profile';
 function App() {
+  const location = useLocation();
+
   return (
     <>
       <Navbar />
       <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="models" element={<Models />} />
-        <Route path="testimonials" element={<TestimonialsPage />} />
-        <Route path="team" element={<Team />} />
-        <Route path="contact" element={<Contact />} />
-      </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/models" element={<Models />} />
+        <Route path="/testimonials" element={<TestimonialsPage />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/LearnMore" element={<LearnMore />} />
+        <Route path="/Profile" element={<Profile />} />
+       
+       
+        
+             </Routes>
     </>
   );
 }
