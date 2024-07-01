@@ -12,7 +12,8 @@ import '../src/dist/styles.css';
 import LearnMore from './Pages/LearnMore';
 import Profile from './Pages/Profile';
 import AddCar from './Pages/AddCar'
-import Cardata from './Pages/Cardata'
+import Cardata from './Pages/Cardata';
+import History from './Pages/History';
 function App() {
   const location = useLocation();
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/AddCar" element={<AddCar />} />
         <Route path="/Cardata" element={<Cardata />} />
+        <Route path="/History" element={<History />} />
         </Routes>
     </>
   );
