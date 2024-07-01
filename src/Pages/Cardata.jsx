@@ -1,11 +1,13 @@
 import React from 'react';
 import { CAR_DATA } from '../components/CarData';
 import './Cardata.css';
-
+import HeroPages from "../components/HeroPages";
 const Cardata = () => {
     const cars = CAR_DATA.flat();
 
     return (
+        <div>
+          <HeroPages name="Car Data"/>
         <div className="car-data-container">
             {cars.map((car, index) => (
                 <div key={index} className="car-item">
@@ -18,6 +20,7 @@ const Cardata = () => {
                     <p><strong>Fuel:</strong> {car.fuel}</p>
                 </div>
             ))}
+        </div>
         </div>
     );
 };

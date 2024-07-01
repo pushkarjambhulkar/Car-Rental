@@ -67,7 +67,7 @@ export default class Profile extends Component {
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
         width: '100%',
         maxWidth: '500px',
-        margin: '120px 20px',
+        margin: ' 20px',
       },
       title: {
         textAlign: 'center',
@@ -163,10 +163,10 @@ export default class Profile extends Component {
 
     return (
      <div>
-        <HeroPages name="Profile" />
+        <HeroPages name="Update_Profile"/>
       
       <div style={styles.container}>
-        
+      
     
         <div style={styles.profileContainer}>
           

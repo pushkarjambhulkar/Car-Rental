@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
- // Import the mock authentication function
-import { ToastContainer } from 'react-toastify'; // Assuming you have ToastContainer imported
-import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for ToastContainer
- // Assuming you have Footer imported
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import HeroPages from "../components/HeroPages";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +15,7 @@ const Login = () => {
     setError('');
 
     try {
-      const response = await (email, password); // Call the authenticateUser function with email and password
+      const response = await (email, password); // Replace with actual authentication logic
       if (response.success) {
         alert('Login successful!');
       } else {
@@ -31,10 +30,11 @@ const Login = () => {
 
   const styles = {
     container: {
+    
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100vh',
+      minHeight: '100vh',
       backgroundColor: '#f0f0f0',
       fontFamily: 'Arial, sans-serif',
     },
@@ -78,7 +78,10 @@ const Login = () => {
   };
 
   return (
+    <div>
+       <HeroPages name="login" />
     <div style={styles.container}>
+     
       <div style={styles.loginContainer}>
         <h2 style={styles.title}>Login</h2>
         <form onSubmit={handleSubmit} className="login-form">
@@ -108,7 +111,7 @@ const Login = () => {
         </form>
       </div>
       <ToastContainer />
-     
+    </div>
     </div>
   );
 };

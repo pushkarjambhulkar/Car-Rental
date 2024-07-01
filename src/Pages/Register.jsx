@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import HeroPages from "../components/HeroPages";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -91,7 +91,7 @@ const Register = () => {
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
       width: '100%',
       maxWidth: '500px',
-      margin: '120px 20px',
+      marginTop:'5px',
       
     },
     title: {
@@ -158,6 +158,8 @@ const Register = () => {
   };
 
   return (
+    <div>
+    <HeroPages name="Car Data"/>
     <div style={styles.container}>
       <div style={styles.registerContainer}>
         <h2 style={styles.title}>Register</h2>
@@ -241,7 +243,7 @@ const Register = () => {
         </form>
       </div>
       <ToastContainer />
-     
+      </div>
     </div>
   );
 };
